@@ -14,7 +14,7 @@ body {
     padding: 0;
     background-color: #FDF6F7; /* Rosa muito claro, quase off-white */
     color: #4A4A4A; /* Texto principal em cinza escuro suave */
-    text-align: center;
+    text-align: center; /* Mantém o centramento geral do body */
     overflow-x: hidden; /* Evita rolagem horizontal indesejada devido a animações */
 }
 
@@ -46,7 +46,7 @@ nav ul li a {
     border-radius: 0;
     transition: background-color 0.3s ease, transform 0.2s ease-out;
     box-shadow: none;
-    /* Estilos para os lacinhos, se você os adicionou */
+    /* Estilos para os lacinhos */
     align-items: center;
     display: inline-flex;
     gap: 5px;
@@ -87,7 +87,7 @@ section {
 }
 
 #inicio img {
-    max-width: 80%; /* ALTERADO: Diminuí o tamanho máximo da imagem */
+    max-width: 80%; /* Diminuí o tamanho máximo da imagem */
     height: auto;
     border-radius: 15px;
     margin-top: 25px;
@@ -154,13 +154,11 @@ footer {
 /* --- Estilos para galerias (FOTOS E VÍDEOS) --- */
 .galeria-grid {
     display: grid;
-    /* Colunas responsivas que se adaptam, com um mínimo de 320px de largura */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    /* As linhas se ajustam automaticamente ao conteúdo (altura das fotos/vídeos) */
     grid-auto-rows: minmax(min-content, max-content);
-    gap: 10px; /* Menos espaçamento entre as fotos/vídeos */
+    gap: 10px;
     margin-top: 30px;
-    padding: 10px; /* Menos padding para ocupar mais espaço */
+    padding: 10px;
     justify-content: center;
 }
 
@@ -168,26 +166,26 @@ footer {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08); /* Sombra mais sutil */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FDF6F7; /* Cor de fundo do item, igual ao corpo, para "esconder" bordas do object-fit: contain */
+    background-color: #FDF6F7;
 }
 
 .galeria-item:hover {
-    transform: scale(1.03); /* Zoom um pouco menor no hover */
-    box-shadow: 0 5px 12px rgba(0,0,0,0.15); /* Sombra mais sutil no hover */
+    transform: scale(1.03);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
 
 .galeria-item img,
 .galeria-item video {
     display: block;
-    width: 100%; /* Ocupa 100% da largura do item */
-    height: auto; /* A altura se ajusta para manter a proporção da imagem/vídeo */
-    object-fit: contain; /* Garante que a imagem/vídeo não seja cortado */
-    background-color: #FDF6F7; /* Fundo que combina com o body, para camuflar o espaço vazio */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: #FDF6F7;
     border-radius: inherit;
     transition: opacity 0.3s ease-in-out;
 }
@@ -196,6 +194,42 @@ footer {
 .galeria-item:hover video {
     opacity: 0.9;
 }
+
+/* --- Estilos específicos para a página de contato/carta --- */
+#contato {
+    text-align: left; /* Alinha o texto à esquerda, como uma carta */
+    max-width: 800px; /* Reduzi a largura máxima para parecer mais com uma folha */
+    padding: 50px 60px; /* Aumentei o padding para mais "respiro" nas bordas */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06); /* Sombra mais suave */
+    border-radius: 15px; /* Bordas um pouco menos arredondadas que a seção padrão */
+    line-height: 1.8; /* Aumentei o espaçamento entre as linhas para facilitar a leitura */
+    color: #4A4A4A; /* Cor do texto */
+}
+
+#contato h2 {
+    text-align: center; /* O título pode continuar centralizado para destaque */
+    margin-bottom: 30px; /* Mais espaço após o título */
+    color: #E91E63;
+}
+
+#contato p {
+    margin-bottom: 20px; /* Espaçamento entre os parágrafos */
+    text-align: justify; /* Justifica o texto para um visual mais formal de carta */
+    text-indent: 30px; /* Indenta a primeira linha de cada parágrafo */
+}
+
+#contato p:last-of-type {
+    margin-bottom: 0; /* Remove margem extra do último parágrafo antes da assinatura */
+    text-indent: 0; /* A última frase pode não ter indentação */
+}
+
+#contato h3 {
+    text-align: right; /* Alinha a assinatura à direita */
+    margin-top: 40px; /* Espaço antes da assinatura */
+    font-size: 1.2em;
+    color: #777777; /* Um cinza mais suave para a assinatura */
+}
+
 
 /* Animações de entrada para fluidez */
 body *:not(script):not(style) {
@@ -261,6 +295,24 @@ body.loaded footer { transition-delay: 1s; }
         border-radius: 15px;
         max-width: 95%; /* Mantém a largura expandida no celular, mas com um pouco de margem */
     }
+
+    #contato {
+        padding: 30px 25px; /* Padding para a carta no celular */
+        text-align: left; /* Garante alinhamento à esquerda */
+        max-width: 95%; /* Ocupa a largura total da tela no celular */
+        line-height: 1.6;
+    }
+    #contato h2 {
+        margin-bottom: 20px;
+    }
+    #contato p {
+        margin-bottom: 15px;
+        text-indent: 20px;
+    }
+    #contato h3 {
+        margin-top: 30px;
+    }
+
 
     #contador {
         flex-direction: column;
