@@ -1,0 +1,322 @@
+/* Paleta de Cores:
+   - Background Principal: #FDF6F7 (Rosa muito claro, quase off-white)
+   - Accent Suave (Cor do Cabeçalho, Rodapé e Hover do Menu): #FF80AB
+   - Accent Principal (Títulos, Hover do Menu): #E91E63
+   - Rosa Mais Forte (Destaque do Número do Contador): #C2185B (Um rosa mais profundo e vibrante)
+   - Texto Principal: #4A4A4A (Cinza Escuro Suave)
+   - Texto Secundário/Labels: #777777 (Cinza Médio)
+   - Fundo das Seções: white
+*/
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FDF6F7; /* Rosa muito claro, quase off-white */
+    color: #4A4A4A; /* Texto principal em cinza escuro suave */
+    text-align: center;
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada devido a animações */
+}
+
+header {
+    background-color: #FF80AB; /* Rosa suave original do menu */
+    padding: 18px 0;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap; /* Permite que os itens do menu quebrem para a linha de baixo se não houver espaço */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.05em;
+    padding: 10px 18px;
+    border-radius: 0;
+    transition: background-color 0.3s ease, transform 0.2s ease-out;
+    box-shadow: none;
+    /* Estilos para os lacinhos, se você os adicionou */
+    align-items: center;
+    display: inline-flex;
+    gap: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #E91E63; /* O rosa vibrante original no hover */
+    transform: translateY(-2px);
+    box-shadow: none;
+}
+
+h1, h2, h3 {
+    font-family: 'Pacifico', cursive;
+    color: #E91E63; /* O rosa vibrante original para os títulos */
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+p {
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: #4A4A4A;
+}
+
+main {
+    padding: 30px 20px;
+    overflow: hidden;
+}
+
+section {
+    background-color: white;
+    margin: 25px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    max-width: 1200px; /* Aumentei a largura máxima para as seções */
+}
+
+#inicio img {
+    max-width: 80%; /* ALTERADO: Diminuí o tamanho máximo da imagem */
+    height: auto;
+    border-radius: 15px;
+    margin-top: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* --- Estilo para o cronômetro sofisticado --- */
+#contador {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens do contador quebrem linha no celular */
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #FDF6F7;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contador-item {
+    text-align: center;
+}
+
+.contador-item .numero {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 5.5em; /* Aumentei MUITO o tamanho da fonte */
+    font-weight: 900; /* O peso máximo de negrito para o maior destaque */
+    line-height: 1;
+    color: #C2185B; /* O rosa mais forte e vibrante para os números */
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.25); /* Sombra mais intensa para profundidade e brilho */
+}
+
+.contador-item .label {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.05em;
+    color: #777777;
+    text-transform: uppercase;
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Quando o tempo acabar */
+#contador.expirado {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    color: #E91E63;
+    padding: 40px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #FF80AB;
+    color: white;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+
+/* --- Estilos para galerias (FOTOS E VÍDEOS) --- */
+.galeria-grid {
+    display: grid;
+    /* Colunas responsivas que se adaptam, com um mínimo de 320px de largura */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* As linhas se ajustam automaticamente ao conteúdo (altura das fotos/vídeos) */
+    grid-auto-rows: minmax(min-content, max-content);
+    gap: 10px; /* Menos espaçamento entre as fotos/vídeos */
+    margin-top: 30px;
+    padding: 10px; /* Menos padding para ocupar mais espaço */
+    justify-content: center;
+}
+
+.galeria-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08); /* Sombra mais sutil */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FDF6F7; /* Cor de fundo do item, igual ao corpo, para "esconder" bordas do object-fit: contain */
+}
+
+.galeria-item:hover {
+    transform: scale(1.03); /* Zoom um pouco menor no hover */
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15); /* Sombra mais sutil no hover */
+}
+
+.galeria-item img,
+.galeria-item video {
+    display: block;
+    width: 100%; /* Ocupa 100% da largura do item */
+    height: auto; /* A altura se ajusta para manter a proporção da imagem/vídeo */
+    object-fit: contain; /* Garante que a imagem/vídeo não seja cortado */
+    background-color: #FDF6F7; /* Fundo que combina com o body, para camuflar o espaço vazio */
+    border-radius: inherit;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.galeria-item:hover img,
+.galeria-item:hover video {
+    opacity: 0.9;
+}
+
+/* Animações de entrada para fluidez */
+body *:not(script):not(style) {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+body.loaded *:not(script):not(style) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.loaded header { transition-delay: 0s; }
+body.loaded main section:nth-child(1) { transition-delay: 0.2s; }
+body.loaded main section:nth-child(2) { transition-delay: 0.4s; }
+body.loaded main section:nth-child(3) { transition-delay: 0.6s; }
+body.loaded main section:nth-child(4) { transition-delay: 0.8s; }
+body.loaded footer { transition-delay: 1s; }
+
+
+/* --- Media Queries para Responsividade (Mobile First) --- */
+
+/* Telas menores que 768px (tablets em modo retrato, celulares) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+
+    nav ul {
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    nav ul li a {
+        font-size: 0.95em;
+        padding: 8px 12px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-top: 25px;
+    }
+    h2 {
+        font-size: 1.5em;
+        margin-top: 20px;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.95em;
+    }
+
+    main {
+        padding: 15px 10px;
+    }
+
+    section {
+        margin: 15px auto;
+        padding: 25px;
+        border-radius: 15px;
+        max-width: 95%; /* Mantém a largura expandida no celular, mas com um pouco de margem */
+    }
+
+    #contador {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .contador-item .numero {
+        font-size: 4.5em;
+    }
+
+    .contador-item .label {
+        font-size: 0.85em;
+    }
+    
+    #contador.expirado {
+        font-size: 1.5em;
+        padding: 25px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Itens menores no celular */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .galeria-item {
+        border-radius: 10px;
+    }
+
+    footer {
+        padding: 15px 0;
+        font-size: 0.8em;
+    }
+}
+
+/* Telas muito pequenas (smartphones antigos ou com zoom) */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav ul li a {
+        padding: 10px 15px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    .contador-item .numero {
+        font-size: 3.8em;
+    }
+}

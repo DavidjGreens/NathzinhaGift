@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Jornada - David e Natacha</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;700;900&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">🎀Início</a></li>
+                <li><a href="galeria_nos.html">🎀Nossos Momentos</a></li>
+                <li><a href="galeria_videos.html">🎀Nossos Vídeos</a></li>
+                <li><a href="contagem_regressiva.html">🎀Nossa Jornada</a></li>
+                <li><a href="galeria_pet.html">🎀Nosso Peludinho</a></li>
+                <li><a href="contato.html">🎀Com Amor, Davidinhu</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contagem-regressiva">
+            <h2>Contagem Regressiva para Nossos 2 Anos!</h2>
+            <p>Mal posso esperar para celebrar mais um ano do nosso amor! Que venham muitos mais anos de felicidade ao seu lado, meu amor!</p>
+            <div id="contador">
+                <div class="contador-item">
+                    <span id="dias" class="numero"></span>
+                    <span class="label">dias</span>
+                </div>
+                <div class="contador-item">
+                    <span id="horas" class="numero"></span>
+                    <span class="label">horas</span>
+                </div>
+                <div class="contador-item">
+                    <span id="minutos" class="numero"></span>
+                    <span class="label">minutos</span>
+                </div>
+                <div class="contador-item">
+                    <span id="segundos" class="numero"></span>
+                    <span class="label">segundos</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 David e Natacha - Amor que cresce a cada dia!</p>
+    </footer>
+
+    <script>
+        // Data alvo: 14 de Junho de 2025
+        // Ajuste a data e hora AQUI se necessário. Ex: ('Ano-Mês-Dia HH:MM:SS')
+        const dataAlvo = new Date('June 14, 2025 00:00:00').getTime();
+
+        const x = setInterval(function() {
+            const agora = new Date().getTime();
+            const distancia = dataAlvo - agora;
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            // ATUALIZA OS NÚMEROS NAS DIVS COM OS IDs CORRETOS
+            document.getElementById("dias").innerHTML = dias;
+            document.getElementById("horas").innerHTML = horas;
+            document.getElementById("minutos").innerHTML = minutos;
+            document.getElementById("segundos").innerHTML = segundos;
+
+            // Se o tempo acabar
+            if (distancia < 0) {
+                clearInterval(x);
+                const contadorDiv = document.getElementById("contador");
+                contadorDiv.innerHTML = "🎉 Parabéns pelos Nossos 2 Anos de Namoro! 🎉";
+                contadorDiv.classList.add('expirado'); // Adiciona a classe 'expirado' para estilizar
+            }
+        }, 1000);
+
+        // Script para animação de entrada (essencial para a fluidez do site)
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
