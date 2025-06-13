@@ -4,7 +4,7 @@
    - Accent Principal (Títulos, Hover do Menu): #E91E63
    - Rosa Mais Forte (Destaque do Número do Contador): #C2185B (Um rosa mais profundo e vibrante)
    - Texto Principal: #4A4A4A (Cinza Escuro Suave)
-   - Texto Secundário/Labels: #777777 (Cinza Médio)
+   - Texto Secundário/Labels: #777777 (Cinça Médio)
    - Fundo das Seções: white
 */
 
@@ -171,7 +171,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FDF6F7;
+    background-color: #FDF6F7; /* Fundo padrão para itens de galeria */
 }
 
 .galeria-item:hover {
@@ -185,7 +185,7 @@ footer {
     width: 100%;
     height: auto;
     object-fit: contain;
-    background-color: #FDF6F7;
+    background-color: #FDF6F7; /* Fundo padrão para itens de galeria */
     border-radius: inherit;
     transition: opacity 0.3s ease-in-out;
 }
@@ -197,37 +197,89 @@ footer {
 
 /* --- Estilos específicos para a página de contato/carta --- */
 #contato {
-    text-align: left; /* Alinha o texto à esquerda, como uma carta */
-    max-width: 800px; /* Reduzi a largura máxima para parecer mais com uma folha */
-    padding: 50px 60px; /* Aumentei o padding para mais "respiro" nas bordas */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06); /* Sombra mais suave */
-    border-radius: 15px; /* Bordas um pouco menos arredondadas que a seção padrão */
-    line-height: 1.8; /* Aumentei o espaçamento entre as linhas para facilitar a leitura */
-    color: #4A4A4A; /* Cor do texto */
+    text-align: left;
+    max-width: 800px;
+    padding: 50px 60px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    border-radius: 15px;
+    line-height: 1.8;
+    color: #4A4A4A;
 }
 
 #contato h2 {
-    text-align: center; /* O título pode continuar centralizado para destaque */
-    margin-bottom: 30px; /* Mais espaço após o título */
+    text-align: center;
+    margin-bottom: 30px;
     color: #E91E63;
 }
 
 #contato p {
-    margin-bottom: 20px; /* Espaçamento entre os parágrafos */
-    text-align: justify; /* Justifica o texto para um visual mais formal de carta */
-    text-indent: 30px; /* Indenta a primeira linha de cada parágrafo */
+    margin-bottom: 20px;
+    text-align: justify;
+    text-indent: 30px;
 }
 
 #contato p:last-of-type {
-    margin-bottom: 0; /* Remove margem extra do último parágrafo antes da assinatura */
-    text-indent: 0; /* A última frase pode não ter indentação */
+    margin-bottom: 0;
+    text-indent: 0;
 }
 
 #contato h3 {
-    text-align: right; /* Alinha a assinatura à direita */
-    margin-top: 40px; /* Espaço antes da assinatura */
+    text-align: right;
+    margin-top: 40px;
     font-size: 1.2em;
-    color: #777777; /* Um cinza mais suave para a assinatura */
+    color: #777777;
+}
+
+
+/* --- Estilos específicos para a página de Nossos Momentos (clima casual + escuro com rosa suave) --- */
+.body-momentos {
+    background-color: #1A1A1A; /* Fundo do BODY mais escuro */
+    color: #FDF6F7; /* Cor do texto padrão do body para branco suave */
+}
+
+.body-momentos header {
+    background-color: #333333; /* Fundo do cabeçalho mais escuro */
+    box-shadow: 0 3px 8px rgba(255,128,171,0.2); /* Sombra com brilho rosa suave no cabeçalho */
+}
+
+.body-momentos nav ul li a {
+    color: #F8BBD0; /* Rosa mais claro para os links do menu */
+}
+
+.body-momentos nav ul li a:hover {
+    background-color: #E91E63; /* Mantém o hover vibrante */
+    color: white; /* Garante que o texto fique branco no hover */
+}
+
+/* Estilo para a SEÇÃO da galeria (o "cartão" principal) */
+.body-momentos #galeria-nos {
+    background-color: #282828; /* Um cinza bem escuro para o fundo da seção */
+    box-shadow: 0 0 30px rgba(255, 128, 171, 0.4); /* Sombra rosa suave, mais espalhada para a iluminação */
+    border-radius: 25px; /* Ligeiramente mais arredondado para um toque aconchegante */
+    padding: 40px; /* Um bom padding */
+    color: #FDF6F7; /* Texto dentro da seção mais claro */
+}
+
+.body-momentos #galeria-nos h2,
+.body-momentos #galeria-nos p {
+    color: #FDF6F7; /* Títulos e parágrafos claros */
+}
+
+/* Ajusta o fundo dos ITENS INDIVIDUAIS da galeria para combinar com o tema escuro */
+.body-momentos .galeria-item {
+    background-color: #3A3A3A; /* Fundo para cada item da galeria */
+    box-shadow: 0 2px 8px rgba(255, 128, 171, 0.2); /* Sombra rosa mais discreta para os itens */
+}
+
+.body-momentos .galeria-item:hover {
+    transform: scale(1.05); /* Um pouco mais de zoom no hover */
+    box-shadow: 0 5px 15px rgba(255, 128, 171, 0.4); /* Sombra mais intensa no hover */
+}
+
+/* Garante que as imagens não tenham um fundo branco indesejado se não preencherem o item */
+.body-momentos .galeria-item img,
+.body-momentos .galeria-item video {
+    background-color: #3A3A3A; /* Fundo da imagem/vídeo para se misturar */
 }
 
 

@@ -5,25 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossos Momentos - David e Natacha</title>
     <link rel="stylesheet" href="estilo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="body-momentos"> <audio id="starShoppingAudio" loop preload="auto">
+        <source src="Star Shopping - Lil Peep.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">🎀Início</a></li>
-                <li><a href="galeria_nos.html">🎀Nossos Momentos</a></li>
-                <li><a href="galeria_videos.html">🎀Nossos Vídeos</a></li>
-                <li><a href="contagem_regressiva.html">🎀Nossa Jornada</a></li>
-                <li><a href="galeria_pet.html">🎀Nosso Peludinho</a></li>
-                <li><a href="contato.html">🎀Com Amor, Davidinhu</a></li>
+                <li><a href="index.html">🎀 Início</a></li>
+                <li><a href="galeria_nos.html">🎀 Nossos Momentos</a></li>
+                <li><a href="galeria_videos.html">🎀 Nossos Vídeos</a></li>
+                <li><a href="contagem_regressiva.html">🎀 Nossa Jornada</a></li>
+                <li><a href="galeria_pet.html">🎀 Nosso Peludinho</a></li>
+                <li><a href="contato.html">🎀 Com Amor, Davidinhu</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="galeria-nos">
-            <h2>Nossos Momentos Inesquecíveis</h2>
+        <section id="galeria-nos"> <h2>Nossos Momentos Inesquecíveis</h2>
             <p>Cada foto um pedacinho da nossa história, do nosso amor. ✨</p>
             <div class="galeria-grid">
                 <div class="galeria-item">
@@ -112,9 +115,8 @@
                     <img src="pictures/NovasFotitas (11).jpg" alt="David e Natacha 16">
                 </div>
                 <div class="galeria-item">
-                    <img src="pictures//IMG-20240514-WA0125.jpg" alt="David e Natacha 16">
-                </div>
-                </div>
+                    <img src="pictures/IMG-20240514-WA0125.jpg" alt="David e Natacha 16"> </div>
+            </div>
         </section>
     </main>
 
@@ -124,6 +126,15 @@
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             document.body.classList.add('loaded');
+
+            // Tentar tocar a música quando a página for carregada
+            const audio = document.getElementById('starShoppingAudio');
+            if (audio) {
+                audio.play().catch(error => {
+                    console.log("Autoplay bloqueado:", error);
+                    // Aqui você pode adicionar um ícone de play/pause se preferir
+                });
+            }
         });
     </script>
 </body>
